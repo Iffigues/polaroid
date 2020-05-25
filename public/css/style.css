@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+header {
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    width: 100%;
+    background-color: white;
+    margin: 1%;
+
+}
+
+#root {
+    background-color: #1A1110;
+    width: 98%;
+    margin: 1%;
+    padding: 1%;
+    margin-top: 0px;
+    
+    color: antiquewhite;
+}
+
+.imh {
+  width: 30%;
+  margin: 0px;
+}
+
