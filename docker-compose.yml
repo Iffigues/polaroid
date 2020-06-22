@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+    polaroid:
+      build:
+        context: .
+        dockerfile: ./polaroid/Dockerfile
+      restart: always
+      volumes:
+          - "./polaroid:/go/src/app"
+    staticserver:
+        build:
+          context: .
+          dockerfile: ./staticserver/Dockerfile
+        restart: always
+        volumes:
+            - "./staticserver:/go/src/app"
+    psql:
+        image: postgres
+        restart: always
+        environment:
+             POSTGRES_PASSWORD: Petassia01
+             POSTGRES_USER: iffigues
+             POSTGRES_DB: polaroid
+        restart: always
+    smtp:
+        image: namshi/smtp
