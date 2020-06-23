@@ -1,5 +1,12 @@
 version: '3.7'
-
+networks:
+  back-tier:
+    driver: bridge
+volumes:
+  api:
+  database_postgres: 
+volumes:
+  database-data:
 services:
     polaroid:
       build:
@@ -7,7 +14,19 @@ services:
         dockerfile: ./polaroid/Dockerfile
       restart: always
       volumes:
+        - api:/usr/src/app/
+      volumes:
           - "./polaroid:/go/src/app"
+      expose:
+          - 8888
+      ports:
+          - 8888:8888
+      links:
+        - psql
+      networks:
+        - back-tier
+      depends_on:
+       - psql
     staticserver:
         build:
           context: .
@@ -15,13 +34,29 @@ services:
         restart: always
         volumes:
             - "./staticserver:/go/src/app"
+        expose: 
+          - 3000
+        ports:
+          - 3000:3000
+        networks:
+          - back-tier
     psql:
-        image: postgres
+        image: postgres:latest
         restart: always
         environment:
-             POSTGRES_PASSWORD: Petassia01
-             POSTGRES_USER: iffigues
-             POSTGRES_DB: polaroid
+             - POSTGRES_PASSWORD:Marie1426
+             - POSTGRES_USER:iffigues
+             - POSTGRES_DB:polaroid
         restart: always
+        networks:
+          - back-tier
+        expose: 
+          - 5432
+        ports:
+          - "5432:5432"
+        volumes:
+          - database-data:/var/lib/postgresql/data/
     smtp:
-        image: namshi/smtp
+      image: namshi/smtp
+      networks:
+        - back-tier

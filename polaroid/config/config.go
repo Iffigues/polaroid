@@ -1,6 +1,9 @@
 package config
 
 import (
+	"fmt"
+	"os"
+
 	_ "github.com/lib/pq"
 )
 
@@ -14,10 +17,11 @@ func NewConf() (a Config) {
 
 func Pk() (ar Conf) {
 	ar = make(map[string]interface{})
-	ar["host"] = "localhost"
+	ar["host"] = "psql"
 	ar["port"] = 5432
 	ar["user"] = "iffigues"
-	ar["password"] = "Marie1426"
+	ar["password"] = "44658335ca13a527bdc9b1b744776924"
 	ar["dbname"] = "polaroid"
+	fmt.Println(os.Environ())
 	return
 }
