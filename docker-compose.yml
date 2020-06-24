@@ -9,18 +9,16 @@ volumes:
   database-data:
 services:
     polaroid:
-      build:
-        context: .
-        dockerfile: ./polaroid/Dockerfile
+      image: golang
       restart: always
       volumes:
-        - api:/usr/src/app/
-      volumes:
-          - "./polaroid:/go/src/app"
+        - "./polaroid:/go/src/app"
+      working_dir: /go/src/app
+      command: "go run ./main.go"
       expose:
-          - 8888
+        - "8888"
       ports:
-          - 8888:8888
+        - 8888:8888
       links:
         - psql
       networks:
@@ -28,25 +26,23 @@ services:
       depends_on:
        - psql
     staticserver:
-        build:
-          context: .
-          dockerfile: ./staticserver/Dockerfile
+        image: golang
         restart: always
         volumes:
             - "./staticserver:/go/src/app"
-        expose: 
-          - 3000
+        working_dir: /go/src/app
+        command: "go run ./main.go"
+        expose:
+          - "3000"
         ports:
           - 3000:3000
         networks:
           - back-tier
     psql:
-        image: postgres:latest
+        image: "postgres"
         restart: always
-        environment:
-             - POSTGRES_PASSWORD:Marie1426
-             - POSTGRES_USER:iffigues
-             - POSTGRES_DB:polaroid
+        env_file:
+          - database.env
         restart: always
         networks:
           - back-tier

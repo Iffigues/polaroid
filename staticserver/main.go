@@ -9,6 +9,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.StrictSlash(true)
+	println("oui c'est la")
 	r.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("./public/"))))
 	h := &http.Server{
 		Addr:    ":3000",

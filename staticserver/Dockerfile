@@ -1,10 +1,5 @@
-from golang:latest
+from golang
 
-
-WORKDIR /go/src/app
-COPY ./staticserver/public .
 RUN go mod init static
-RUN go get -d -v ./...
-RUN go install -v ./...
-RUN rm .*
+RUN go get 
 CMD ["go", "run", "."]

@@ -20,7 +20,7 @@ func Pk() (ar Conf) {
 	ar["host"] = "psql"
 	ar["port"] = 5432
 	ar["user"] = "iffigues"
-	ar["password"] = "44658335ca13a527bdc9b1b744776924"
+	ar["password"] = "Marie1426"
 	ar["dbname"] = "polaroid"
 	fmt.Println(os.Environ())
 	return

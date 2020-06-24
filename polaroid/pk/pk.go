@@ -33,7 +33,6 @@ func NewPk(s config.Conf) (a *Pk) {
 func (a *Pk) IsUsers() (ok bool) {
 	db, err := a.Connect()
 	if err != nil {
-		fmt.Println("rrr")
 		return
 	}
 	defer db.Close()
@@ -45,7 +44,6 @@ func (a *Pk) IsUsers() (ok bool) {
 
 func (a *Pk) Starter() {
 	a.IsUsers()
-	print("eee")
 	db, err := a.Connect()
 	if err != nil {
 		log.Fatal(err)
@@ -57,8 +55,8 @@ func (a *Pk) Starter() {
 		logo VARCHAR(50),
 		body VARCHAR(50), 
 		css VARCHAR(50),
-		name VARCHAR(50
-	) UNIQUE);`)
+		name VARCHAR(50) UNIQUE
+	);`)
 	if err != nil {
 		log.Fatal(err)
 	}
