@@ -14,7 +14,7 @@ services:
       volumes:
         - "./polaroid:/go/src/app"
       working_dir: /go/src/app
-      command: "go run ./main.go"
+      command: "go run ."
       expose:
         - "8888"
       ports:
@@ -31,7 +31,7 @@ services:
         volumes:
             - "./staticserver:/go/src/app"
         working_dir: /go/src/app
-        command: "go run ./main.go"
+        command: "go run ."
         expose:
           - "3006"
         ports:

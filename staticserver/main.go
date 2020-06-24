@@ -3,18 +3,35 @@ package main
 import (
 	"net/http"
 	"fmt"
-	"strings"
+	"errors"
+	//"strings"
 )
 
-func hello(w http.ResponseWriter, r *http.Request) {
-	e := r.URL.Path
-	obj := e[1:]
-	array := strings.Split(obj, "/")
-	l := array[0]
-	fmt.Fprintf(w, l)
+func (a *Data)AddData(aa string) (err error, val []byte) {
+
+	var g Give
+	e := len(aa)
+	
+	return
+}
+
+func (a *Data)ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if val, ok := a.Data[r.URL.Path]; ok {
+		if val.Err != nil {
+			fmt.Fprintf(w, val.Err.Error())
+			return
+		}
+		fmt.Fprintf(w, val.Bytes)
+		return
+	}
+	err, data := a.AddData(r.URL.Path);
+	if err != nil {
+	}
+	fmt.Fprintf(w, data)
 }
 
 func main() {
-	http.HandleFunc("/", hello)
+	a := NewData()
+	http.Handle("/", a)
 	http.ListenAndServe(":3006", nil)
 }
