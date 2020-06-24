@@ -2,18 +2,19 @@ package main
 
 import (
 	"net/http"
-
-	"github.com/gorilla/mux"
+	"fmt"
+	"strings"
 )
 
+func hello(w http.ResponseWriter, r *http.Request) {
+	e := r.URL.Path
+	obj := e[1:]
+	array := strings.Split(obj, "/")
+	l := array[0]
+	fmt.Fprintf(w, l)
+}
+
 func main() {
-	r := mux.NewRouter()
-	r.StrictSlash(true)
-	println("oui c'est la")
-	r.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("./public/"))))
-	h := &http.Server{
-		Addr:    ":3000",
-		Handler: r,
-	}
-	h.ListenAndServe()
+	http.HandleFunc("/", hello)
+	http.ListenAndServe(":3006", nil)
 }
