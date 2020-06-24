@@ -2,32 +2,32 @@ package main
 
 import (
 	"net/http"
-	"fmt"
-	"errors"
 	//"strings"
 )
 
-func (a *Data)AddData(aa string) (err error, val []byte) {
-
-	var g Give
-	e := len(aa)
-	
+func (a *Data)AddData(url string) (err error, val []byte) {
+	println(url)
 	return
 }
 
 func (a *Data)ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "/" {
+		w.Write([]byte("no file give"))
+		return
+	}
 	if val, ok := a.Data[r.URL.Path]; ok {
 		if val.Err != nil {
-			fmt.Fprintf(w, val.Err.Error())
+			w.Write([]byte(val.Err.Error()))
 			return
 		}
-		fmt.Fprintf(w, val.Bytes)
+		w.Write(val.Bytes)
 		return
 	}
 	err, data := a.AddData(r.URL.Path);
 	if err != nil {
+		w.Write([]byte(err.Error()))
 	}
-	fmt.Fprintf(w, data)
+	w.Write(data)
 }
 
 func main() {
