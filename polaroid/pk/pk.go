@@ -43,7 +43,6 @@ func (a *Pk) IsUsers() (ok bool) {
 }
 
 func (a *Pk) Starter() {
-	a.IsUsers()
 	db, err := a.Connect()
 	if err != nil {
 		log.Fatal(err)

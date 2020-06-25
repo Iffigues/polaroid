@@ -55,8 +55,16 @@ func (a *Admin) ConnectAdmins(e *types.Data) http.Handler {
 		if a.IsAdmin(r) {
 			//return
 		}
-		head := tool.NewHeader(r, w, "gopiko-admin", e)
-		head.Jointure("layout.html", "admin.html")
+		if r.Method == "GET" {
+			head := tool.NewHeader(r, w, "gopiko-admin", e)
+			head.Jointure("layout.html", "admin.html")
+		}
+		if r.Method == "POST" {
+		   _, err := tool.NewForm(r)
+		   if err != nil {
+		   	return
+		   }
+		}
 	})
 }
 
