@@ -22,6 +22,5 @@ func Pk() (ar Conf) {
 	ar["user"] = "iffigues"
 	ar["password"] = "Marie1426"
 	ar["dbname"] = "polaroid"
-	fmt.Println(os.Environ())
 	return
 }

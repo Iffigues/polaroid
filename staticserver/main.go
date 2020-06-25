@@ -52,9 +52,7 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	GetContentType()
 	a := NewData()
 	http.Handle("/", a)
-	//http.Handle("/public", http.FileServer(AssetFile()))
 	http.ListenAndServe(":3006", nil)
 }
