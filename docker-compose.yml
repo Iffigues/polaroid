@@ -56,3 +56,15 @@ services:
       image: namshi/smtp
       networks:
         - back-tier
+    ddos:
+      image: sflow/ddos-blackhole
+      networks:
+        - back-tier
+      expose:
+        - "8008"
+      ports:
+        - "8008:8008"
+      volumes:
+        - "./ddos.conf:/sflow-rt/ddos.conf"
+        - "sflow/ddos-blackhole"
+        - "Dsystem.propertyFiles=ddos.conf"
