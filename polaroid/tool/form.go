@@ -19,7 +19,7 @@ func NewForm(r *http.Request) (a *Form, err error) {
     }, nil
 }
 
-func (a *Form)HaveField(b ...string) (ok bool) {
+func (a *Form)HaveField(b ...string) (b map[string]string ,ok bool) {
 	ok = true
 	for _, val := range b {
 		if _,ok := a.FormData[val]; !ok {

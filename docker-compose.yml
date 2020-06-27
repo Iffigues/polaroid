@@ -62,8 +62,10 @@ services:
         - back-tier
       expose:
         - "8008"
+        - "6343"
       ports:
         - "8008:8008"
+        - "6343:6343/udp"
       volumes:
         - "./ddos.conf:/sflow-rt/ddos.conf"
         - "sflow/ddos-blackhole"

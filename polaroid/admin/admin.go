@@ -1,6 +1,7 @@
 package admin
 
 import (
+	"fmt"
 	"net/http"
 	"polaroid/server"
 	"polaroid/tool"
@@ -45,19 +46,19 @@ func (a *Admin) isAdmin(h http.Handler) http.Handler {
 func (a *Admin) Admins(e *types.Data) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		head := tool.NewHeader(r, w, "gopiko-admin", e)
-		head.Jointure("layout.html", "admincon.html")
+		head.Jointure("layout.html", "admin.html")
 	})
 }
 
 func (a *Admin) ConnectAdmins(e *types.Data) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-
 		if a.IsAdmin(r) {
-			//return
+			return
 		}
+		println("oui")
 		if r.Method == "GET" {
 			head := tool.NewHeader(r, w, "gopiko-admin", e)
-			head.Jointure("layout.html", "admin.html")
+			head.Jointure("layout.html", "admincon.html")
 		}
 		if r.Method == "POST" {
 		   _, err := tool.NewForm(r)
@@ -70,5 +71,5 @@ func (a *Admin) ConnectAdmins(e *types.Data) http.Handler {
 
 func (a *Admin) WWW(s *server.Server) {
 	s.NewR("/admins", "admins", []string{"GET"}, a.isAdmin(a.Admins(s.Data)), 1)
-	s.NewR("/admin", "admin", []string{"GET", "POST"}, a.Admins(s.Data), 1)
+	s.NewR("/admin", "admin", []string{"GET", "POST"}, a.ConnectAdmins(s.Data), 1)
 }
