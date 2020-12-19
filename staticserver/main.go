@@ -36,6 +36,25 @@ func (a *Data) AddData(url string) (rr Give) {
 }
 
 func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	url := strings.Split(r.URL.Path, "/")
+	for key, val := range a.Url {
+		urls := strings.Split(key, "/") 
+		if len(url) == len(urls) {
+			yes := true
+			for i := 0; i < len(url) ; i = i + 1 {
+				if urls[i] != "*" {
+					if urls[i] != url[i] {
+						yes = false
+					}
+				}
+			}
+			if yes {
+				return
+				val.H(w, r)
+				return
+			}
+		}
+	}
 	if val, ok := a.Url[r.URL.Path]; ok {
 		val.H(w, r)
 		return
@@ -66,7 +85,7 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	a := NewData()
-	a.HandleFunc("/", []string{"GET"}, hello)
+	a.HandleFunc("/oui", []string{"GET"}, hello)
 	http.Handle("/", a)
 	http.ListenAndServe(":3006", nil)
 }
