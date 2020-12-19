@@ -1,12 +1,13 @@
 package main
 
 import (
+	"strings"
 	"errors"
 	"net/http"
 	"path/filepath"
 )
 
-func (a *Data) AddData(url string) (rr  Give) {
+func (a *Data) AddData(url string) (rr Give) {
 	code := 200
 	val, err := Asset(url[1:])
 	ext := filepath.Ext(url[1:])
@@ -25,8 +26,8 @@ func (a *Data) AddData(url string) (rr  Give) {
 		types = "text/html; charset=utf-8"
 		val = a.Error
 	}
-	rr = Give {
-		Code: code,
+	rr = Give{
+		Code:  code,
 		Types: types,
 		Bytes: val,
 	}
@@ -35,8 +36,17 @@ func (a *Data) AddData(url string) (rr  Give) {
 }
 
 func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path == "/" {
-		w.Write([]byte("no file give"))
+	if val, ok := a.Url[r.URL.Path]; ok {
+		val.H(w, r)
+		return
+	}
+	if r.URL.Path == "/upload" {
+		//		grap()
+	}
+	if strings.HasPrefix(r.URL.Path, "/public") {
+	j := strings.Split(r.URL.Path, "/")
+	if j[1] != "public" {
+		hello(w, r);
 		return
 	}
 	if val, ok := a.Data[r.URL.Path]; ok {
@@ -45,14 +55,18 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.Write(val.Bytes)
 		return
 	}
-	val := a.AddData(r.URL.Path)
-	w.Header().Set("Content-type", val.Types)
-        w.WriteHeader(val.Code)
-        w.Write(val.Bytes)
+		val := a.AddData(r.URL.Path)
+		w.Header().Set("Content-type", val.Types)
+		w.WriteHeader(val.Code)
+		w.Write(val.Bytes)
+		return
+	}
+	hello(w, r)
 }
 
 func main() {
 	a := NewData()
+	a.HandleFunc("/", []string{"GET"}, hello)
 	http.Handle("/", a)
 	http.ListenAndServe(":3006", nil)
 }

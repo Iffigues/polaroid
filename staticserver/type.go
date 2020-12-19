@@ -1,6 +1,9 @@
 package main
 
-import "log"
+import (
+	"log"
+	"net/http"
+)
 
 type Give struct {
 	Types string
@@ -8,10 +11,25 @@ type Give struct {
 	Bytes []byte
 }
 
+type Connect struct {
+	connected bool
+	user      string
+	pwd       string
+	jwtKey    []byte
+	token     string
+}
+
+type H struct {
+	H      func(w http.ResponseWriter, r *http.Request)
+	Method []string
+}
+
 type Data struct {
-	Data  map[string]Give
-	Types map[string]string
-	Error []byte
+	Url     map[string]H
+	Data    map[string]Give
+	Types   map[string]string
+	Connect *Connect
+	Error   []byte
 }
 
 func existe(e interface{}) {
@@ -26,10 +44,12 @@ func NewData() (D *Data) {
 	}
 	return &Data{
 		Data: make(map[string]Give),
+		Url:  make(map[string]H),
 		Types: map[string]string{
 			"css": "text/css",
 			"png": "image/png",
 		},
-		Error: html,
+		Connect: NewConnect(),
+		Error:   html,
 	}
 }

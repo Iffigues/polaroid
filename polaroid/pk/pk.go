@@ -43,11 +43,15 @@ func (a *Pk) IsUsers() (ok bool) {
 }
 
 func (a *Pk) Starter() {
+
 	db, err := a.Connect()
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	defer db.Close()
+
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS article (
 		title VARCHAR(50) UNIQUE,
 		describe VARCHAR(50), 
@@ -59,6 +63,7 @@ func (a *Pk) Starter() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS gallerie (
 		title VARCHAR(50) UNIQUE,
 		describe VARCHAR(50),
@@ -67,19 +72,34 @@ func (a *Pk) Starter() {
 		css VARCHAR(50),
 		name VARCHAR(50) UNIQUE
 	);`)
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS connect (
+		token VARCHAR(128)
+	);`)
+
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS users (
 		login VARCHAR(50),
 		logo VARCHAR(50),
 		password VARCHAR(50),
 		mail VARCHAR(50)
 	);`)
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	_, err = db.Exec(`INSERT INTO users  VALUES ('iffigues','','Petassia01', 'iffigues@vivaldi.net');`)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = db.Exec(`INSERT INTO users VALUES ('css', 'Mince1234', 'iffigues@vivaldi.net');`);
+
 	if err != nil {
 		log.Fatal(err)
 	}
