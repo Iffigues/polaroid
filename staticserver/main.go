@@ -49,7 +49,12 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 			if yes {
-				val.H(w, r)
+				for _, valeur := range val.Method {
+					if r.Method == valeur {
+						val.H(w, r)
+						return
+					}
+				}
 				return
 			}
 		}
