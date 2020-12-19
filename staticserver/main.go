@@ -1,10 +1,10 @@
 package main
 
 import (
-	"strings"
 	"errors"
 	"net/http"
 	"path/filepath"
+	"strings"
 )
 
 func (a *Data) AddData(url string) (rr Give) {
@@ -38,10 +38,10 @@ func (a *Data) AddData(url string) (rr Give) {
 func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	url := strings.Split(r.URL.Path, "/")
 	for key, val := range a.Url {
-		urls := strings.Split(key, "/") 
+		urls := strings.Split(key, "/")
 		if len(url) == len(urls) {
 			yes := true
-			for i := 0; i < len(url) ; i = i + 1 {
+			for i := 0; i < len(url); i = i + 1 {
 				if urls[i] != "*" {
 					if urls[i] != url[i] {
 						yes = false
@@ -49,7 +49,6 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 			if yes {
-				return
 				val.H(w, r)
 				return
 			}
@@ -63,17 +62,17 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		//		grap()
 	}
 	if strings.HasPrefix(r.URL.Path, "/public") {
-	j := strings.Split(r.URL.Path, "/")
-	if j[1] != "public" {
-		hello(w, r);
-		return
-	}
-	if val, ok := a.Data[r.URL.Path]; ok {
-		w.Header().Set("Content-type", val.Types)
-		w.WriteHeader(val.Code)
-		w.Write(val.Bytes)
-		return
-	}
+		j := strings.Split(r.URL.Path, "/")
+		if j[1] != "public" {
+			hello(w, r)
+			return
+		}
+		if val, ok := a.Data[r.URL.Path]; ok {
+			w.Header().Set("Content-type", val.Types)
+			w.WriteHeader(val.Code)
+			w.Write(val.Bytes)
+			return
+		}
 		val := a.AddData(r.URL.Path)
 		w.Header().Set("Content-type", val.Types)
 		w.WriteHeader(val.Code)
@@ -85,7 +84,7 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	a := NewData()
-	a.HandleFunc("/oui", []string{"GET"}, hello)
+	a.HandleFunc("/", []string{"GET"}, hello)
 	http.Handle("/", a)
 	http.ListenAndServe(":3006", nil)
 }
