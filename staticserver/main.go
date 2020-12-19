@@ -36,6 +36,25 @@ func (a *Data) AddData(url string) (rr Give) {
 }
 
 func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if strings.HasPrefix(r.URL.Path, "/public") {
+		j := strings.Split(r.URL.Path, "/")
+		if j[1] != "public" {
+			hello(w, r)
+			return
+		}
+		if val, ok := a.Data[r.URL.Path]; ok {
+			w.Header().Set("Content-type", val.Types)
+			w.WriteHeader(val.Code)
+			w.Write(val.Bytes)
+			return
+		}
+		val := a.AddData(r.URL.Path)
+		w.Header().Set("Content-type", val.Types)
+		w.WriteHeader(val.Code)
+		w.Write(val.Bytes)
+		return
+	}
+
 	url := strings.Split(r.URL.Path, "/")
 	for key, val := range a.Url {
 		urls := strings.Split(key, "/")
@@ -58,31 +77,6 @@ func (a *Data) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 		}
-	}
-	if val, ok := a.Url[r.URL.Path]; ok {
-		val.H(w, r)
-		return
-	}
-	if r.URL.Path == "/upload" {
-		//		grap()
-	}
-	if strings.HasPrefix(r.URL.Path, "/public") {
-		j := strings.Split(r.URL.Path, "/")
-		if j[1] != "public" {
-			hello(w, r)
-			return
-		}
-		if val, ok := a.Data[r.URL.Path]; ok {
-			w.Header().Set("Content-type", val.Types)
-			w.WriteHeader(val.Code)
-			w.Write(val.Bytes)
-			return
-		}
-		val := a.AddData(r.URL.Path)
-		w.Header().Set("Content-type", val.Types)
-		w.WriteHeader(val.Code)
-		w.Write(val.Bytes)
-		return
 	}
 	hello(w, r)
 }
