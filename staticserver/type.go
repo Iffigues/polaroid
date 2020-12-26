@@ -22,6 +22,11 @@ type Connect struct {
 type H struct {
 	H      func(w http.ResponseWriter, r *http.Request)
 	Method []string
+	Val  []int
+}
+
+type Oauth struct {
+
 }
 
 type Data struct {
@@ -29,6 +34,7 @@ type Data struct {
 	Data    map[string]Give
 	Types   map[string]string
 	Connect *Connect
+	Oauth	*Oauth
 	Error   []byte
 }
 

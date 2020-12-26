@@ -127,12 +127,12 @@ func publicCssStyleCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/css/style.css", size: 437, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/css/style.css", size: 437, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
 
-var _publicHtml404Html = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x3c\x8e\xc1\xca\x83\x30\x10\x84\xcf\xfa\x14\x8b\x0f\xf0\xef\x2f\x78\x08\xb2\xdd\x5b\xcf\x05\xdf\x20\xc5\x98\x95\xd6\x6c\x88\x5b\xa4\x6f\x5f\x54\xda\xd3\x0c\xcc\x0c\xf3\x91\xd8\xf2\xe4\xba\x22\x09\x7e\xdc\x15\xbf\xe6\xae\xe3\x9b\xeb\xaa\xa2\xcc\x24\x2d\x5f\x87\xe1\x36\x40\xf7\xdf\x11\x4a\xcb\xb0\xea\x12\x4c\xe6\x14\x61\xf3\x2b\x6c\x45\x53\x24\xcc\x47\xdf\x83\x94\x30\x5d\x1a\x31\xcb\x3d\x62\xd4\x3c\x3f\xf4\x6f\x2a\xbd\x73\xce\x35\x4c\x99\x4b\xb0\x57\x49\x60\x0a\xbf\x70\x1f\x13\xfa\x83\xe0\x7c\x26\x3c\xd1\x3e\x01\x00\x00\xff\xff\x33\xe4\x98\xb0\xa2\x00\x00\x00")
+var _publicHtml404Html = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x3c\x8e\xc1\x0a\xc2\x30\x10\x44\xcf\xe9\x57\x2c\xfd\x00\xd7\x42\x4f\xb2\xee\xcd\xb3\x90\x3f\x88\x34\xcd\x16\x6d\x36\xa4\x2b\xc5\xbf\x97\xb6\xe8\x69\x86\x61\x86\x37\x24\x36\xbf\xb8\x71\x24\x31\x0c\x9b\xe2\xcf\x3c\x74\xf8\x70\xe3\x1c\x15\x26\xe9\xf8\xe6\xfd\xdd\x43\x7f\xee\x09\xa5\x63\x58\x74\x8e\x26\x53\x4e\xb0\x86\x05\xd6\xaa\x39\x11\x96\xbd\x1f\x40\x6a\x1c\xaf\xad\x98\x95\x0b\x62\xd2\x32\x3d\xf5\x34\xd6\x96\xa9\x70\x8d\xf6\xae\x19\x4c\xe1\x9f\x6f\x3b\xc2\xb0\xc3\x0f\x28\xe1\xf1\xea\x1b\x00\x00\xff\xff\x33\xc8\xb9\x04\x9d\x00\x00\x00")
 
 func publicHtml404HtmlBytes() ([]byte, error) {
 	return bindataRead(
@@ -147,7 +147,7 @@ func publicHtml404Html() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/html/404.html", size: 162, mode: os.FileMode(420), modTime: time.Unix(1593098841, 0)}
+	info := bindataFileInfo{name: "public/html/404.html", size: 157, mode: os.FileMode(420), modTime: time.Unix(1608344118, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -167,7 +167,7 @@ func publicImgFaviconAndroidChrome192x192Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-chrome-192x192.png", size: 31613, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-chrome-192x192.png", size: 31613, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -187,7 +187,7 @@ func publicImgFaviconAndroidChrome512x512Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-chrome-512x512.png", size: 78743, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-chrome-512x512.png", size: 78743, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -207,7 +207,7 @@ func publicImgFaviconAndroidIcon144x144Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-icon-144x144.png", size: 19082, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-icon-144x144.png", size: 19082, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -227,7 +227,7 @@ func publicImgFaviconAndroidIcon192x192Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-icon-192x192.png", size: 30350, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-icon-192x192.png", size: 30350, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -247,7 +247,7 @@ func publicImgFaviconAndroidIcon36x36Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-icon-36x36.png", size: 2564, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-icon-36x36.png", size: 2564, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -267,7 +267,7 @@ func publicImgFaviconAndroidIcon48x48Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-icon-48x48.png", size: 3740, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-icon-48x48.png", size: 3740, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -287,7 +287,7 @@ func publicImgFaviconAndroidIcon72x72Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-icon-72x72.png", size: 6591, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-icon-72x72.png", size: 6591, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -307,7 +307,7 @@ func publicImgFaviconAndroidIcon96x96Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/android-icon-96x96.png", size: 10088, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/android-icon-96x96.png", size: 10088, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -327,7 +327,7 @@ func publicImgFaviconAppleIcon114x114Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-114x114.png", size: 13063, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-114x114.png", size: 13063, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -347,7 +347,7 @@ func publicImgFaviconAppleIcon120x120Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-120x120.png", size: 14222, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-120x120.png", size: 14222, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -367,7 +367,7 @@ func publicImgFaviconAppleIcon144x144Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-144x144.png", size: 19082, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-144x144.png", size: 19082, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -387,7 +387,7 @@ func publicImgFaviconAppleIcon152x152Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-152x152.png", size: 20838, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-152x152.png", size: 20838, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -407,7 +407,7 @@ func publicImgFaviconAppleIcon180x180Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-180x180.png", size: 27773, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-180x180.png", size: 27773, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -427,7 +427,7 @@ func publicImgFaviconAppleIcon57x57Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-57x57.png", size: 4721, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-57x57.png", size: 4721, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -447,7 +447,7 @@ func publicImgFaviconAppleIcon60x60Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-60x60.png", size: 4999, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-60x60.png", size: 4999, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -467,7 +467,7 @@ func publicImgFaviconAppleIcon72x72Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-72x72.png", size: 6591, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-72x72.png", size: 6591, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -487,7 +487,7 @@ func publicImgFaviconAppleIcon76x76Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-76x76.png", size: 7112, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-76x76.png", size: 7112, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -507,7 +507,7 @@ func publicImgFaviconAppleIconPrecomposedPng() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon-precomposed.png", size: 30839, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon-precomposed.png", size: 30839, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -527,7 +527,7 @@ func publicImgFaviconAppleIconPng() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-icon.png", size: 30839, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-icon.png", size: 30839, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -547,7 +547,7 @@ func publicImgFaviconAppleTouchIconPng() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/apple-touch-icon.png", size: 27206, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/apple-touch-icon.png", size: 27206, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -567,7 +567,7 @@ func publicImgFaviconBrowserconfigXml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/browserconfig.xml", size: 281, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/browserconfig.xml", size: 281, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -587,7 +587,7 @@ func publicImgFaviconF17f242d22cfd6d41458527c3d3125dcIcoZip() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/f17f242d22cfd6d41458527c3d3125dc.ico.zip", size: 381536, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/f17f242d22cfd6d41458527c3d3125dc.ico.zip", size: 381536, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -607,7 +607,7 @@ func publicImgFaviconFavicon16x16Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/favicon-16x16.png", size: 1259, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/favicon-16x16.png", size: 1259, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -627,7 +627,7 @@ func publicImgFaviconFavicon32x32Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/favicon-32x32.png", size: 2233, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/favicon-32x32.png", size: 2233, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -647,7 +647,7 @@ func publicImgFaviconFavicon96x96Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/favicon-96x96.png", size: 10088, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/favicon-96x96.png", size: 10088, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -667,7 +667,7 @@ func publicImgFaviconFaviconIco() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/favicon.ico", size: 1150, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/favicon.ico", size: 1150, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -687,7 +687,7 @@ func publicImgFaviconFavicon_io1Zip() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/favicon_io (1).zip", size: 157068, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/favicon_io (1).zip", size: 157068, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -707,7 +707,7 @@ func publicImgFaviconManifestJson() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/manifest.json", size: 720, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/manifest.json", size: 720, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -727,7 +727,7 @@ func publicImgFaviconMsIcon144x144Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/ms-icon-144x144.png", size: 19082, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/ms-icon-144x144.png", size: 19082, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -747,7 +747,7 @@ func publicImgFaviconMsIcon150x150Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/ms-icon-150x150.png", size: 20469, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/ms-icon-150x150.png", size: 20469, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -767,7 +767,7 @@ func publicImgFaviconMsIcon310x310Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/ms-icon-310x310.png", size: 67825, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/ms-icon-310x310.png", size: 67825, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -787,7 +787,7 @@ func publicImgFaviconMsIcon70x70Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/ms-icon-70x70.png", size: 6317, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/ms-icon-70x70.png", size: 6317, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -807,7 +807,7 @@ func publicImgFaviconSiteWebmanifest() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "public/img/favicon/site.webmanifest", size: 263, mode: os.FileMode(420), modTime: time.Unix(1592993051, 0)}
+	info := bindataFileInfo{name: "public/img/favicon/site.webmanifest", size: 263, mode: os.FileMode(420), modTime: time.Unix(1608170969, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
